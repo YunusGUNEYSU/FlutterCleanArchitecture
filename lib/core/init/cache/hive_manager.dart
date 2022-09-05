@@ -11,7 +11,7 @@ class HiveManager {
 
   Box? box;
   static Future boxInit( TypeAdapter<dynamic> adapter) async{
-    Hive.registerAdapter(adapter);
+    Hive.registerAdapter<dynamic>(adapter);
     instance.box??=await Hive.openBox('myBox');
   }
   
