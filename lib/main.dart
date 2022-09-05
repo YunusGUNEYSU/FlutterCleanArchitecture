@@ -7,6 +7,7 @@ import 'package:clean_architecture/core/init/navigation/navigation_service.dart'
 import 'package:clean_architecture/core/init/notifier/theme_notifier.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
 import 'core/constants/app/app_constants.dart';
@@ -26,6 +27,7 @@ void main() {
 Future<void> _init() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await Hive.initFlutter();
   
 }
 class MyApp extends StatelessWidget {
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-    
+ 
       title: 'Flutter Demo',
       theme: context.watch<ThemeNotifier>().currentTheme,
     

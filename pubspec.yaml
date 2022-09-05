@@ -37,6 +37,8 @@ dependencies:
 
   #database
   shared_preferences: ^2.0.15
+  hive: 
+  hive_flutter: 
   
   #language
   easy_localization: ^3.0.1
